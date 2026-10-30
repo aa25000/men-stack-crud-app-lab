@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,19 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('./partials/navbar') %>
-
+    
     <h1>Edit Car</h1>
 
-    <form action="/cars/<%= car._id %>?_method=PUT" method="POST">
+    
+ 
+    <form action="/cars/<%=car._id %>?_method=PUT" method="post">
+
+
+
         <label for="name">Name:</label>
-        <input name="name" id="name" type="text" value="<%= car.name %>">
+        <input value="<%=car.name %>" name="name" id="name" type="text">
+
+
 
         <label for="isElectric">Is Electric?</label>
-        <input name="isElectric" id="isElectric" type="checkbox" <%= car.isElectric ? 'checked' : '' %>>
+        <input <% if(car.isElectric){ %> checked <% } %> name="isElectric" id="isElectric" type="checkbox">
 
         <button>Update Car</button>
-    </form>
 
+    </form>
 </body>
 </html>

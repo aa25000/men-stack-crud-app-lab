@@ -12,8 +12,13 @@
     <h1>Car Details</h1>
 
     <p>Name: <%= car.name %></p>
-    <p>Is Electric: <%= car.isElectric %></p>
 
+<% if(car.isElectric){ %>
+    <p>Electric Car
+    </p>
+<% }else{ %>
+    <p>Not Electric</p>
+<% } %>
 
     <a href="/cars/<%= car._id %>/edit">Edit Car</a>
 
