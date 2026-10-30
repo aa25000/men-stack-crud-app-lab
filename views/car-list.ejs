@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <h1>All Cars</h1>
+
+   
+    <% if(cars.length === 0) { %>
+        <p>No Cars to show yet. Come Back Later</p>
+      
+        <a href="/cars/new">Create Your own Car here</a>
+
+
+          <% } %>
+
+    <% for(let oneCar of cars){ %>
+
+        <p>Name: <%= oneCar.name%></p>
+        <a href="/cars/<%= oneCar._id%>">See Car Details</a>
+
+        
+    <% } %>
+    
+</body>
+</html>
